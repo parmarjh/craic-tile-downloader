@@ -4,7 +4,11 @@ Takes a latitude, longitude, and tile zoom level for a given tile server and out
 
 ## Inputs
 
-Lat and long must be in decimal degrees, and in that order (lat first).  If lat is not between -85 and 85 degrees, I don't know what will happen, but almost certainly nothing useful (if you live at one of the poles you're out of luck with this simple tool).  Zoom level must be a positive integer less than 20.  
+Lat and long must be in decimal degrees, and in that order (lat first).  
+
+If lat is not between about -85 and 85 degrees, I don't know what will happen, but almost certainly nothing useful (if you live at one of the poles you're out of luck with this simple tool).  
+
+Zoom level must be a positive integer less than 20.  
 
 ## Usage:
 
@@ -25,7 +29,7 @@ The script takes the lat, long, and zoom level you've given it as arguments, and
 3. Where necessary, it converts the tile coordinates into another representation such as a Quad Key
 4. If the tile server in question is known to the script (and, where appropriate, an API key is present in the cfg folder), it generates an actual URL for the relevant tile.
 
-The tile that gets selected is whatever one, at the given zoom level, contains the precise lat and long entered as arguments.  It doesn't matter where the actual point falls within the tile, you get the URL of the containing tile.  This will *not* be the same area, or necessarily the same upper left origin, for different zoom levels.
+The tile that gets selected is whatever one, at the given zoom level, contains the precise lat and long entered as arguments.  It doesn't matter where the actual point falls within the tile, you get the URL of the containing tile.  This will _not_ be the same area, or necessarily the same upper left origin, for different zoom levels.
 
 ## Projection, datum, coordinate systems, etc.
 
