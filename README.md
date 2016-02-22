@@ -16,9 +16,9 @@ Zoom level must be a positive integer less than 20.
 
 Example:
 
-    python lat_long_zoom_to_tile_URL.py -2.694940 27.349241 13 OSM
+    python lat_long_zoom_to_tile_URL.py -2.484838 28.85987 19 OSM
 
-That'll get you the URL of an OpenStreetMap (OSM) tile in a little town in the Congo (Shabunda, South Kivu, Democratic Republic of the Congo).
+That'll get you the URL of an OpenStreetMap (OSM) tile in a town in the Congo (Bukavu, South Kivu, Democratic Republic of the Congo).
 
 ## What happens when you run it
 
