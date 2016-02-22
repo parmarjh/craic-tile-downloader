@@ -38,9 +38,10 @@ def tile_coords_to_quadKey(zoom, x, y):
     return quadKey
 
 if __name__ == "__main__":
-    zoom = int(sys.argv[1])
-    latitude = float(sys.argv[2])
-    longitude = float(sys.argv[3])
+
+    latitude = float(sys.argv[1])
+    longitude = float(sys.argv[2])
+    zoom = int(sys.argv[3])
 
     pixel = lat_long_to_pixel_coords(zoom, longitude, latitude)
     tile = pixel_coords_to_tile_address(pixel.x, pixel.y)
