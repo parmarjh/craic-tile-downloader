@@ -53,8 +53,8 @@ def lat_long_zoom_to_URL(lat, lon, zoom):
     tile = pixel_coords_to_tile_address(pixel.x, pixel.y)
     quadKey = tile_coords_and_zoom_to_quadKey(tile.x, tile.y, zoom)
     try:
-        api_key = ("Anz84uRE1RULeLwuJ0qKu5amcu5rugRXy1vKc27"
-                   "wUaKVyIv1SVZrUjqaOfXJJoI0")
+        f = open('cfg/api_key')
+        api_key = f.read()
     except:
         print "Sumthin wrong with yer API key"
 
