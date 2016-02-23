@@ -60,7 +60,8 @@ def lat_long_zoom_to_URL(lat, lon, zoom):
 
     tile_url = ("http://t0.tiles.virtualearth.net/tiles/a{}.jpeg?"
                 "g=854&mkt=en-US&token={}".format(quadKey, api_key))
-    print "\nThe tile URL is :{}".format(tile_url)
+    print "\nThe tile URL is: {}".format(tile_url)
+    return tile_url
 
 if __name__ == "__main__":
 
