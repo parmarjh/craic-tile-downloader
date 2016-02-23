@@ -10,6 +10,8 @@ If lat is not between about -85 and 85 degrees, I don't know what will happen, b
 
 Zoom level must be a positive integer less than 20.  
 
+You'll need an API key if you're downloading tiles from a server that requires one. In this case, please create a file called api_key in the cfg/ folder, and paste the key into it.  The script will read the key and add it to the URL for downloading.  It's not a good idea to put your API keys into a publicly available folder, so don't do that (and I'm not)!
+
 ## Usage:
 
     python lat_long_zoom_to_tile_URL.py {lat} {long} {zoom} {tileserver}
