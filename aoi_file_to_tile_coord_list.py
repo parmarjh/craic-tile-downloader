@@ -1,5 +1,6 @@
 import os, sys
 import math
+from lat_long_zoom_to_tile_URL import *
 
 def lat_long_to_pixel_coordinates(infile, zoom_level, long, lat):
 
@@ -11,7 +12,7 @@ def lat_long_to_pixel_coordinates(infile, zoom_level, long, lat):
         sys.exit()
 
     try: 
-        infile_extension = infile.split(.)[-1]
+        infile_extension = infile.split(".")[-1]
     except: 
         print 'yeah, your input file is not that great. \n'
 
@@ -34,3 +35,16 @@ def lat_long_to_pixel_coordinates(infile, zoom_level, long, lat):
             # Get the data layer
             layer = datasource.GetLayer()
         except:
+            print 'I am an indented block'
+
+if __name__ == "__main__":
+
+    lat = float(sys.argv[1])
+    lon = float(sys.argv[2])
+    zoom = int(sys.argv[3])
+
+    print "\nlat={} long={} zoom={}\n".format(lat,lon,zoom)
+
+    quadKey = lat_long_zoom_to_quadKey(lat, lon, zoom)
+
+
