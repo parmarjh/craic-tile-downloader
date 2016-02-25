@@ -3,13 +3,13 @@ import math
 import urllib
 from lat_long_zoom_to_tile_URL import *
 
-def lat_long_to_pixel_coordinates(infile, zoom_level, long, lat):
+def aoi_and_zoom_to_lat_long_points(infile, zoom_level, long, lat):
 
     try:
         from osgeo import ogr, osr
         print 'import of ogr and osr worked. \n'
     except:
-        print 'Import of ogr and osr failed. \n'
+        print 'Import of ogr and osr failed. Please install them. \n'
         sys.exit()
 
     try: 
@@ -36,7 +36,13 @@ def lat_long_to_pixel_coordinates(infile, zoom_level, long, lat):
             # Get the data layer
             layer = datasource.GetLayer()
         except:
-            print 'I am an indented block'
+            print 'Something is wrong with the data layer.'
+
+    # Calculate the grid distance (in lat/long) between tiles at this zoom level
+
+    # Generate a grid 
+
+
 
 if __name__ == "__main__":
 

@@ -56,8 +56,10 @@ def lat_long_zoom_to_URL(lat, lon, zoom):
         f = open('cfg/api_key')
         api_key = f.read()
     except:
-        print "Sumthin wrong with yer API key"
+        print ("Something is wrong with your API key."
+               "Do you even have an API key?")
 
+    #TODO get this into a config file, and set up others (Google, OSM, etc) 
     tile_url = ("http://t0.tiles.virtualearth.net/tiles/a{}.jpeg?"
                 "g=854&mkt=en-US&token={}".format(quadKey, api_key))
     print "\nThe tile URL is: {}".format(tile_url)
@@ -65,11 +67,15 @@ def lat_long_zoom_to_URL(lat, lon, zoom):
 
 if __name__ == "__main__":
 
+    # This script is intended to provide functions to another script.
+
+    # The __main__ function here is for testing and convenience;
+    # it accepts a latitude, longitude, and zoom level as arguments and
+    # calls the functions that translate those inputs into a tile URL, which 
+    # is printed to the console along with the pixel and tile coordinates.
+
     lat = float(sys.argv[1])
     lon = float(sys.argv[2])
     zoom = int(sys.argv[3])
 
     URL = lat_long_zoom_to_URL(lat, lon, zoom)
-
-
-
