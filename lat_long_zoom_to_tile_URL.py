@@ -43,7 +43,7 @@ def tile_coords_and_zoom_to_quadKey(x, y, zoom):
     return quadKey
 
 def quadKey_to_url(quadKey):
-     try:
+    try:
         f = open('cfg/api_key')
         api_key = f.read()
     except:
@@ -67,7 +67,7 @@ def lat_long_zoom_to_URL(lat, lon, zoom):
     pixel = lat_long_zoom_to_pixel_coords(lat, lon, zoom)
     tile = pixel_coords_to_tile_address(pixel.x, pixel.y)
     quadKey = tile_coords_and_zoom_to_quadKey(tile.x, tile.y, zoom)
-    tile_url = quadKey_to_tile_URL(quadKey)
+    tile_url = quadKey_to_url(quadKey)
     return tile_url
    
 if __name__ == "__main__":
