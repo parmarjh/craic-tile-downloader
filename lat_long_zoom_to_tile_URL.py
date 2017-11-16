@@ -22,12 +22,30 @@ def lat_long_zoom_to_pixel_coords(lat, lon, zoom):
     print("\nThe pixel coordinates are x = {} and y = {}".format(p.x, p.y))
     return p
 
+# NOTE - lat_long_zoom_to_pixel_coords and then to a tile will find the tile that
+# contains that coordinate - going from tile back to lat long will not (typically)
+# return that same coordinate
+# I'm unclear if this returns the center of the tile or the top left corner.
+def pixel_coords_to_lat_long(p, zoom):
+  mapsize = 256 * math.pow(2, zoom)
+  x = (min(max(p.x, 0), mapsize - 1) / mapsize) - 0.5
+  lon = 360 * x
+  y = 0.5 - (min(max(p.y, 0), mapsize - 1) / mapsize)
+  lat = 90 - 360 * math.atan(math.exp(-y * 2 * math.pi)) / math.pi
+  return lat, lon
+
 def pixel_coords_to_tile_address(x,y):
     t = Tile()
     t.x = int(math.floor(x / 256))
     t.y = int(math.floor(y / 256))
     print("\nThe tile coordinates are x = {} and y = {}".format(t.x, t.y))
     return t
+
+def tile_address_to_pixel_coords(t):
+    p = Point()
+    p.x = t.x * 256
+    p.y = t.y * 256
+    return p
 
 def tile_coords_and_zoom_to_quadKey(x, y, zoom):
     quadKey = ''
